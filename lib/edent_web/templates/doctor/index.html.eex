@@ -1,0 +1,30 @@
+<h1>Listing Doctors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fname</th>
+      <th>Pname</th>
+      <th>Lname</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for doctor <- @doctors do %>
+    <tr>
+      <td><%= doctor.fname %></td>
+      <td><%= doctor.pname %></td>
+      <td><%= doctor.lname %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.doctor_path(@conn, :show, doctor) %></span>
+        <span><%= link "Edit", to: Routes.doctor_path(@conn, :edit, doctor) %></span>
+        <span><%= link "Delete", to: Routes.doctor_path(@conn, :delete, doctor), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Doctor", to: Routes.doctor_path(@conn, :new) %></span>

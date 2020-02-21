@@ -1,0 +1,23 @@
+<h1>Show Doctor schedule entry</h1>
+
+<ul>
+
+  <li>
+    <strong>D:</strong>
+    <%= @doctor_schedule_entry.d %>
+  </li>
+
+  <li>
+    <strong>T1:</strong>
+    <%= @doctor_schedule_entry.t1 %>
+  </li>
+
+  <li>
+    <strong>T2:</strong>
+    <%= @doctor_schedule_entry.t2 %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.doctor_schedule_entry_path(@conn, :edit, @doctor_schedule_entry) %></span>
+<span><%= link "Back", to: Routes.doctor_schedule_entry_path(@conn, :index) %></span>

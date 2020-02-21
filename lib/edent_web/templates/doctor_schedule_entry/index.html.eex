@@ -1,0 +1,30 @@
+<h1>Listing Doctor schedule</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>D</th>
+      <th>T1</th>
+      <th>T2</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for doctor_schedule_entry <- @doctor_schedule do %>
+    <tr>
+      <td><%= doctor_schedule_entry.d %></td>
+      <td><%= doctor_schedule_entry.t1 %></td>
+      <td><%= doctor_schedule_entry.t2 %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.doctor_schedule_entry_path(@conn, :show, doctor_schedule_entry) %></span>
+        <span><%= link "Edit", to: Routes.doctor_schedule_entry_path(@conn, :edit, doctor_schedule_entry) %></span>
+        <span><%= link "Delete", to: Routes.doctor_schedule_entry_path(@conn, :delete, doctor_schedule_entry), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Doctor schedule entry", to: Routes.doctor_schedule_entry_path(@conn, :new) %></span>

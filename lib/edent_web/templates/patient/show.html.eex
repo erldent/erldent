@@ -1,0 +1,53 @@
+<h1>Show Patient</h1>
+
+<ul>
+
+  <li>
+    <strong>Fname:</strong>
+    <%= @patient.fname %>
+  </li>
+
+  <li>
+    <strong>Pname:</strong>
+    <%= @patient.pname %>
+  </li>
+
+  <li>
+    <strong>Sname:</strong>
+    <%= @patient.sname %>
+  </li>
+
+  <li>
+    <strong>Birthday:</strong>
+    <%= @patient.birthday %>
+  </li>
+
+  <li>
+    <strong>Phone pri:</strong>
+    <%= @patient.phone_pri %>
+  </li>
+
+  <li>
+    <strong>Phone sms:</strong>
+    <%= @patient.phone_sms %>
+  </li>
+
+  <li>
+    <strong>Phone extra:</strong>
+    <%= @patient.phone_extra %>
+  </li>
+
+  <li>
+    <strong>Source:</strong>
+    <%= @patient.source %>
+  </li>
+
+  <li>
+    <strong>Discount:</strong>
+    <%= @patient.discount %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.patient_path(@conn, :edit, @patient) %></span>
+<span><%= link "Back", to: Routes.patient_path(@conn, :index) %></span>

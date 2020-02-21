@@ -1,0 +1,42 @@
+<h1>Listing Patients</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fname</th>
+      <th>Pname</th>
+      <th>Sname</th>
+      <th>Birthday</th>
+      <th>Phone pri</th>
+      <th>Phone sms</th>
+      <th>Phone extra</th>
+      <th>Source</th>
+      <th>Discount</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for patient <- @patients do %>
+    <tr>
+      <td><%= patient.fname %></td>
+      <td><%= patient.pname %></td>
+      <td><%= patient.sname %></td>
+      <td><%= patient.birthday %></td>
+      <td><%= patient.phone_pri %></td>
+      <td><%= patient.phone_sms %></td>
+      <td><%= patient.phone_extra %></td>
+      <td><%= patient.source %></td>
+      <td><%= patient.discount %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.patient_path(@conn, :show, patient) %></span>
+        <span><%= link "Edit", to: Routes.patient_path(@conn, :edit, patient) %></span>
+        <span><%= link "Delete", to: Routes.patient_path(@conn, :delete, patient), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Patient", to: Routes.patient_path(@conn, :new) %></span>

@@ -1,0 +1,38 @@
+<h1>Show Visit</h1>
+
+<ul>
+
+  <li>
+    <strong>T:</strong>
+    <%= @visit.t %>
+  </li>
+
+  <li>
+    <strong>Duration:</strong>
+    <%= @visit.duration %>
+  </li>
+
+  <li>
+    <strong>Cancelled:</strong>
+    <%= @visit.cancelled %>
+  </li>
+
+  <li>
+    <strong>Complains:</strong>
+    <%= @visit.complains %>
+  </li>
+
+  <li>
+    <strong>Recommndations:</strong>
+    <%= @visit.recommndations %>
+  </li>
+
+  <li>
+    <strong>Comments:</strong>
+    <%= @visit.comments %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.visit_path(@conn, :edit, @visit) %></span>
+<span><%= link "Back", to: Routes.visit_path(@conn, :index) %></span>

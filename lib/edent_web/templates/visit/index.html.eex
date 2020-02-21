@@ -1,0 +1,36 @@
+<h1>Listing Visits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>T</th>
+      <th>Duration</th>
+      <th>Cancelled</th>
+      <th>Complains</th>
+      <th>Recommndations</th>
+      <th>Comments</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for visit <- @visits do %>
+    <tr>
+      <td><%= visit.t %></td>
+      <td><%= visit.duration %></td>
+      <td><%= visit.cancelled %></td>
+      <td><%= visit.complains %></td>
+      <td><%= visit.recommndations %></td>
+      <td><%= visit.comments %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.visit_path(@conn, :show, visit) %></span>
+        <span><%= link "Edit", to: Routes.visit_path(@conn, :edit, visit) %></span>
+        <span><%= link "Delete", to: Routes.visit_path(@conn, :delete, visit), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Visit", to: Routes.visit_path(@conn, :new) %></span>

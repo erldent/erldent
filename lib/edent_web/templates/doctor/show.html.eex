@@ -1,0 +1,23 @@
+<h1>Show Doctor</h1>
+
+<ul>
+
+  <li>
+    <strong>Fname:</strong>
+    <%= @doctor.fname %>
+  </li>
+
+  <li>
+    <strong>Pname:</strong>
+    <%= @doctor.pname %>
+  </li>
+
+  <li>
+    <strong>Lname:</strong>
+    <%= @doctor.lname %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.doctor_path(@conn, :edit, @doctor) %></span>
+<span><%= link "Back", to: Routes.doctor_path(@conn, :index) %></span>
