@@ -1,0 +1,30 @@
+<h1>Listing Teethmap</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>T</th>
+      <th>Tooth</th>
+      <th>Comments</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for teeth_map_items <- @teethmap do %>
+    <tr>
+      <td><%= teeth_map_items.t %></td>
+      <td><%= teeth_map_items.tooth %></td>
+      <td><%= teeth_map_items.comments %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.teeth_map_items_path(@conn, :show, teeth_map_items) %></span>
+        <span><%= link "Edit", to: Routes.teeth_map_items_path(@conn, :edit, teeth_map_items) %></span>
+        <span><%= link "Delete", to: Routes.teeth_map_items_path(@conn, :delete, teeth_map_items), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Teeth map items", to: Routes.teeth_map_items_path(@conn, :new) %></span>

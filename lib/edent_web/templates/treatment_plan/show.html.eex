@@ -1,0 +1,23 @@
+<h1>Show Treatment plan</h1>
+
+<ul>
+
+  <li>
+    <strong>Created:</strong>
+    <%= @treatment_plan.created %>
+  </li>
+
+  <li>
+    <strong>Finish schedule:</strong>
+    <%= @treatment_plan.finish_schedule %>
+  </li>
+
+  <li>
+    <strong>Isfinished:</strong>
+    <%= @treatment_plan.isfinished %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.treatment_plan_path(@conn, :edit, @treatment_plan) %></span>
+<span><%= link "Back", to: Routes.treatment_plan_path(@conn, :index) %></span>

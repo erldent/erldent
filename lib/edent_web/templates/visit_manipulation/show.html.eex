@@ -1,0 +1,8 @@
+<h1>Show Visit manipulation</h1>
+
+<ul>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.visit_manipulation_path(@conn, :edit, @visit_manipulation) %></span>
+<span><%= link "Back", to: Routes.visit_manipulation_path(@conn, :index) %></span>

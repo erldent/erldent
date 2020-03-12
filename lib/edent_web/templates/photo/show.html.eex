@@ -1,0 +1,28 @@
+<h1>Show Photo</h1>
+
+<ul>
+
+  <li>
+    <strong>T:</strong>
+    <%= @photo.t %>
+  </li>
+
+  <li>
+    <strong>Tooth:</strong>
+    <%= @photo.tooth %>
+  </li>
+
+  <li>
+    <strong>Filename:</strong>
+    <%= @photo.filename %>
+  </li>
+
+  <li>
+    <strong>Comments:</strong>
+    <%= @photo.comments %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.photo_path(@conn, :edit, @photo) %></span>
+<span><%= link "Back", to: Routes.photo_path(@conn, :index) %></span>

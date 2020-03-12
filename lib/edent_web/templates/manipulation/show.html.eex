@@ -1,0 +1,28 @@
+<h1>Show Manipulation</h1>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @manipulation.title %>
+  </li>
+
+  <li>
+    <strong>Cost:</strong>
+    <%= @manipulation.cost %>
+  </li>
+
+  <li>
+    <strong>Discount max:</strong>
+    <%= @manipulation.discount_max %>
+  </li>
+
+  <li>
+    <strong>Kind:</strong>
+    <%= @manipulation.kind %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.manipulation_path(@conn, :edit, @manipulation) %></span>
+<span><%= link "Back", to: Routes.manipulation_path(@conn, :index) %></span>

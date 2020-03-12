@@ -1,0 +1,5 @@
+<h1>Edit Visit manipulation</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.visit_manipulation_path(@conn, :update, @visit_manipulation)) %>
+
+<span><%= link "Back", to: Routes.visit_manipulation_path(@conn, :index) %></span>

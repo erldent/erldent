@@ -1,0 +1,13 @@
+<h1>Show Visit extra doctor</h1>
+
+<ul>
+
+  <li>
+    <strong>Comments:</strong>
+    <%= @visit_extra_doctor.comments %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.visit_extra_doctor_path(@conn, :edit, @visit_extra_doctor) %></span>
+<span><%= link "Back", to: Routes.visit_extra_doctor_path(@conn, :index) %></span>

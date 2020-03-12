@@ -1,0 +1,32 @@
+<h1>Listing Manipulations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Cost</th>
+      <th>Discount max</th>
+      <th>Kind</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for manipulation <- @manipulations do %>
+    <tr>
+      <td><%= manipulation.title %></td>
+      <td><%= manipulation.cost %></td>
+      <td><%= manipulation.discount_max %></td>
+      <td><%= manipulation.kind %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.manipulation_path(@conn, :show, manipulation) %></span>
+        <span><%= link "Edit", to: Routes.manipulation_path(@conn, :edit, manipulation) %></span>
+        <span><%= link "Delete", to: Routes.manipulation_path(@conn, :delete, manipulation), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Manipulation", to: Routes.manipulation_path(@conn, :new) %></span>

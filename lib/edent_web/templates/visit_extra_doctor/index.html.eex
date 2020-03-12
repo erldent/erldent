@@ -1,0 +1,26 @@
+<h1>Listing Visit extra doctors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Comments</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for visit_extra_doctor <- @visit_extra_doctors do %>
+    <tr>
+      <td><%= visit_extra_doctor.comments %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.visit_extra_doctor_path(@conn, :show, visit_extra_doctor) %></span>
+        <span><%= link "Edit", to: Routes.visit_extra_doctor_path(@conn, :edit, visit_extra_doctor) %></span>
+        <span><%= link "Delete", to: Routes.visit_extra_doctor_path(@conn, :delete, visit_extra_doctor), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Visit extra doctor", to: Routes.visit_extra_doctor_path(@conn, :new) %></span>

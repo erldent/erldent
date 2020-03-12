@@ -1,0 +1,24 @@
+<h1>Listing Visit manipulations</h1>
+
+<table>
+  <thead>
+    <tr>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for visit_manipulation <- @visit_manipulations do %>
+    <tr>
+
+      <td>
+        <span><%= link "Show", to: Routes.visit_manipulation_path(@conn, :show, visit_manipulation) %></span>
+        <span><%= link "Edit", to: Routes.visit_manipulation_path(@conn, :edit, visit_manipulation) %></span>
+        <span><%= link "Delete", to: Routes.visit_manipulation_path(@conn, :delete, visit_manipulation), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Visit manipulation", to: Routes.visit_manipulation_path(@conn, :new) %></span>

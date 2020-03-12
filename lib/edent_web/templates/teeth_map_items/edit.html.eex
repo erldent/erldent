@@ -1,0 +1,5 @@
+<h1>Edit Teeth map items</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.teeth_map_items_path(@conn, :update, @teeth_map_items)) %>
+
+<span><%= link "Back", to: Routes.teeth_map_items_path(@conn, :index) %></span>

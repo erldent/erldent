@@ -1,0 +1,23 @@
+<h1>Show Teeth map items</h1>
+
+<ul>
+
+  <li>
+    <strong>T:</strong>
+    <%= @teeth_map_items.t %>
+  </li>
+
+  <li>
+    <strong>Tooth:</strong>
+    <%= @teeth_map_items.tooth %>
+  </li>
+
+  <li>
+    <strong>Comments:</strong>
+    <%= @teeth_map_items.comments %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.teeth_map_items_path(@conn, :edit, @teeth_map_items) %></span>
+<span><%= link "Back", to: Routes.teeth_map_items_path(@conn, :index) %></span>

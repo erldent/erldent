@@ -1,0 +1,18 @@
+<h1>Show Treatment plan item</h1>
+
+<ul>
+
+  <li>
+    <strong>Tooth:</strong>
+    <%= @treatment_plan_item.tooth %>
+  </li>
+
+  <li>
+    <strong>Comments:</strong>
+    <%= @treatment_plan_item.comments %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.treatment_plan_item_path(@conn, :edit, @treatment_plan_item) %></span>
+<span><%= link "Back", to: Routes.treatment_plan_item_path(@conn, :index) %></span>

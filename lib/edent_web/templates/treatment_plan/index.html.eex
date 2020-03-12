@@ -1,0 +1,30 @@
+<h1>Listing Treatment plans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Created</th>
+      <th>Finish schedule</th>
+      <th>Isfinished</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for treatment_plan <- @treatment_plans do %>
+    <tr>
+      <td><%= treatment_plan.created %></td>
+      <td><%= treatment_plan.finish_schedule %></td>
+      <td><%= treatment_plan.isfinished %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.treatment_plan_path(@conn, :show, treatment_plan) %></span>
+        <span><%= link "Edit", to: Routes.treatment_plan_path(@conn, :edit, treatment_plan) %></span>
+        <span><%= link "Delete", to: Routes.treatment_plan_path(@conn, :delete, treatment_plan), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Treatment plan", to: Routes.treatment_plan_path(@conn, :new) %></span>

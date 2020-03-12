@@ -3,7 +3,8 @@ defmodule EdentWeb.Api.DoctorView do
   alias EdentWeb.Api.DoctorView
 
   def render("index.json", %{doctors: doctors}) do
-    %{data: render_many(doctors, DoctorView, "doctor.json")}
+  %{items: render_many(doctors, DoctorView, "doctor.json")
+  }
   end
 
   def render("show.json", %{doctor: doctor}) do
@@ -14,6 +15,7 @@ defmodule EdentWeb.Api.DoctorView do
     %{id: doctor.id,
       fname: doctor.fname,
       pname: doctor.pname,
-      lname: doctor.lname }
+      lname: doctor.lname,
+      text: doctor.lname <> " " <> doctor.fname <> " " <> doctor.pname}
   end
 end

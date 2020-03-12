@@ -1,0 +1,28 @@
+<h1>Show Reminder</h1>
+
+<ul>
+
+  <li>
+    <strong>T:</strong>
+    <%= @reminder.t %>
+  </li>
+
+  <li>
+    <strong>Text:</strong>
+    <%= @reminder.text %>
+  </li>
+
+  <li>
+    <strong>Auto:</strong>
+    <%= @reminder.auto %>
+  </li>
+
+  <li>
+    <strong>Comments:</strong>
+    <%= @reminder.comments %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.reminder_path(@conn, :edit, @reminder) %></span>
+<span><%= link "Back", to: Routes.reminder_path(@conn, :index) %></span>
