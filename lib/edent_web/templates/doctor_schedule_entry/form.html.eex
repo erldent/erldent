@@ -18,28 +18,8 @@
   <%= error_tag f, :t2 %>
 
   <%= label f, :doctor_id %>
-  <select style="width: 100%;" id="doctor_id_s2" name="doctor_schedule_entry[doctor_id]">
-  <option value="<%= input_value(f, :doctor_id) %>" selected="selected">def</option>
-  </select>
-  <script>
-  $(function(){
-      var doctor_s2=$('#doctor_id_s2').select2({});
-      $.ajax({url:'/api/doctors'}).done(function(res){
-        var sval=doctor_s2.val();
-        doctor_s2.find("option").remove();
-        for (var d = 0; d < res.items.length; d++) {
-          var item = res.items[d];
-          doctor_s2.append(new Option(item.text, item.id, true, true));
-        }
-        doctor_s2.val(sval).trigger('change');
-      });
-  });
-  </script>
+  <%= doctor_select f, :doctor_id %>
   <%= error_tag f, :doctor_id %>
-
-
-
-
   <div>
     <%= submit "Save" %>
   </div>
