@@ -17,7 +17,11 @@
       <td><%= doctor_schedule_entry.d %></td>
       <td><%= doctor_schedule_entry.t1 %></td>
       <td><%= doctor_schedule_entry.t2 %></td>
-      <td><%= doctor_schedule_entry.doctor_id %></td>
+      <td>
+      <%= doctor_schedule_entry.doctor.fname <> " " %>
+      <%= doctor_schedule_entry.doctor.pname <> " " %>
+      <%= doctor_schedule_entry.doctor.lname %>
+      </td>
 
       <td>
         <span><%= link "Show", to: Routes.doctor_schedule_entry_path(@conn, :show, doctor_schedule_entry) %></span>

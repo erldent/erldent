@@ -18,7 +18,7 @@ defmodule Edent.DoctorSchedule do
 
   """
   def list_doctor_schedule do
-    Repo.all(DoctorScheduleEntry)
+    Repo.all(DoctorScheduleEntry) |> Edent.Repo.preload([:doctor])
   end
 
   @doc """
