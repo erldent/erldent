@@ -8,7 +8,7 @@ defmodule Edent.TreatmentPlanItems.TreatmentPlanItem do
 #    field :treatment_plan_id, :id
     belongs_to(:treatment_plan, Edent.TreatmentPlans.TreatmentPlan)
 #    field :manipulation_id, :id
-    belongs_to(:manipulation_id, Edent.Manipulations.Manipulation)
+    belongs_to(:manipulation, Edent.Manipulations.Manipulation)
 
     timestamps()
   end

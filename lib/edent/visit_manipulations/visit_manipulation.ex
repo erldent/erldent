@@ -8,9 +8,9 @@ defmodule Edent.VisitManipulations.VisitManipulation do
 #    field :visit_id, :id
     belongs_to(:visit, Edent.Visits.Visit)
 #    field :manipulation_id, :id
-    belongs_to(:manipulation_id, Edent.Manipulations.Manipulation)
+    belongs_to(:manipulation, Edent.Manipulations.Manipulation)
 #    field :treatment_plan_item_id, :id
-    belongs_to(:treatment_plan_item_id, Edent.TreatmentPlanItems.TreatmentPlanItem)
+    belongs_to(:treatment_plan_item, Edent.TreatmentPlanItems.TreatmentPlanItem)
 
     timestamps()
   end
