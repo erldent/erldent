@@ -4,8 +4,10 @@ defmodule Edent.VisitExtraDoctors.VisitExtraDoctor do
 
   schema "visit_extra_doctors" do
     field :comments, :string
-    field :doctor_id, :id
-    field :visit_id, :id
+#    field :doctor_id, :id
+    belongs_to(:doctor, Edent.Doctors.Doctor)
+#    field :visit_id, :id
+    belongs_to(:visit, Edent.Visits.Visit)
 
     timestamps()
   end
@@ -13,7 +15,7 @@ defmodule Edent.VisitExtraDoctors.VisitExtraDoctor do
   @doc false
   def changeset(visit_extra_doctor, attrs) do
     visit_extra_doctor
-    |> cast(attrs, [:comments])
-    |> validate_required([:comments])
+    |> cast(attrs, [:comments, :doctor_id, :visit_id])
+    |> validate_required([:comments, :doctor_id, :visit_id])
   end
 end

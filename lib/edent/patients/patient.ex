@@ -20,6 +20,6 @@ defmodule Edent.Patients.Patient do
   def changeset(patient, attrs) do
     patient
     |> cast(attrs, [:fname, :pname, :sname, :birthday, :phone_pri, :phone_sms, :phone_extra, :source, :discount])
-    |> validate_required([:fname, :pname, :sname, :birthday, :phone_pri, :phone_sms, :phone_extra, :source, :discount])
+    |> validate_required([:fname, :pname, :sname, :discount])
   end
 end

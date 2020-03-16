@@ -35,7 +35,7 @@ defmodule Edent.Photos do
       ** (Ecto.NoResultsError)
 
   """
-  def get_photo!(id), do: Repo.get!(Photo, id)
+  def get_photo!(id), do: Repo.get!(Photo, id) |> Edent.Repo.preload([:patient])
 
   @doc """
   Creates a photo.

@@ -35,7 +35,7 @@ defmodule Edent.Reminders do
       ** (Ecto.NoResultsError)
 
   """
-  def get_reminder!(id), do: Repo.get!(Reminder, id)
+  def get_reminder!(id), do: Repo.get!(Reminder, id) |> Edent.Repo.preload([:patient])
 
   @doc """
   Creates a reminder.

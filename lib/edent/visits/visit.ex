@@ -9,8 +9,10 @@ defmodule Edent.Visits.Visit do
     field :duration, :time
     field :recommndations, :string
     field :t, :naive_datetime
-    field :patient_id, :id
-    field :doctor_id, :id
+#    field :patient_id, :id
+    belongs_to(:patient, Edent.Patients.Patient)
+#    field :doctor_id, :id
+    belongs_to(:doctor, Edent.Doctors.Doctor)
 
     timestamps()
   end
@@ -18,7 +20,10 @@ defmodule Edent.Visits.Visit do
   @doc false
   def changeset(visit, attrs) do
     visit
-    |> cast(attrs, [:t, :duration, :cancelled, :complains, :recommndations, :comments])
-    |> validate_required([:t, :duration, :cancelled, :complains, :recommndations, :comments])
+    |> cast(attrs, [:t, :duration, :cancelled, :complains,
+        :recommndations, :comments, :patient_id,
+        :doctor_id])
+    |> validate_required([:t, :duration, :cancelled,
+        :patient_id])
   end
 end
