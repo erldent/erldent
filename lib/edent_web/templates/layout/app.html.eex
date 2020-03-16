@@ -12,11 +12,27 @@
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/select2.min.js") %>"></script>
   </head>
   <body>
+    <style>
+      li.hdr {
+        font-size: 1.2em;
+        text-align: left;
+      }
+    </style>
     <header>
       <section class="container">
         <nav role="navigation">
           <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
+            <li class="hdr"><a href="/doctors">Доктора</a></li>
+            <li><a href="/doctor_schedule">Расписание доктора</a></li>
+            <li class="hdr"><a href="/manipulations">Манипуляции</a></li>
+            <li class="hdr"><a href="/patients">Пациенты</a></li>
+            <li><a href="/visits">Приемы</a></li>
+            <li><a href="/visit_manipulations">Прием (манипуляции)</a></li>
+            <li><a href="/visit_extra_doctors">Прием (врачи)</a></li>
+            <li><a href="/treatment_plans">План лечения</a></li>
+            <li><a href="/teethmap">Карта зубов</a></li>
+            <li><a href="/photos">Фоточки</a></li>
+            <li><a href="/reminders">Напоминалочки</a></li>
           </ul>
         </nav>
         <a href="/">

@@ -6,6 +6,7 @@ defmodule Edent.Doctors.Doctor do
     field :fname, :string
     field :lname, :string
     field :pname, :string
+    has_many :doctor_schedule, DoctorScheduleEntry
 
     timestamps()
   end

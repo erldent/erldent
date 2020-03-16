@@ -17,6 +17,11 @@
     <%= @doctor_schedule_entry.t2 %>
   </li>
 
+  <li>
+    <strong>Doctor:</strong>
+    <%= @doctor_schedule_entry.doctor_id %>
+  </li>
+
 </ul>
 
 <span><%= link "Edit", to: Routes.doctor_schedule_entry_path(@conn, :edit, @doctor_schedule_entry) %></span>

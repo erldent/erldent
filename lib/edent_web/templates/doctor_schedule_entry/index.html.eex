@@ -6,6 +6,7 @@
       <th>D</th>
       <th>T1</th>
       <th>T2</th>
+      <th>doctor</th>
 
       <th></th>
     </tr>
@@ -16,6 +17,7 @@
       <td><%= doctor_schedule_entry.d %></td>
       <td><%= doctor_schedule_entry.t1 %></td>
       <td><%= doctor_schedule_entry.t2 %></td>
+      <td><%= doctor_schedule_entry.doctor_id %></td>
 
       <td>
         <span><%= link "Show", to: Routes.doctor_schedule_entry_path(@conn, :show, doctor_schedule_entry) %></span>

@@ -6,7 +6,7 @@ defmodule Edent.DoctorSchedule.DoctorScheduleEntry do
     field :d, :date
     field :t1, :time
     field :t2, :time
-    field :doctor_id, :id
+    belongs_to(:doctor, Edent.Doctors.Doctor)
 
     timestamps()
   end
